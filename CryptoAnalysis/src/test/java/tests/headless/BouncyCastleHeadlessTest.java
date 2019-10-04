@@ -115,13 +115,6 @@ public class BouncyCastleHeadlessTest extends AbstractHeadlessTest {
 		MavenProject mavenProject = createAndCompile(mavenProjectPath);
 		HeadlessCryptoScanner scanner = createScanner(mavenProject, Ruleset.BouncyCastle);
 		
-		setErrorsCount(new ErrorSpecification.Builder("<crypto.ECElGamalEncryptorTest: void testThree(java.lang.String)>")
-				.withFPs(RequiredPredicateError.class, 1, "https://github.com/CROSSINGTUD/CryptSL/issues/11")
-				.build());
-		setErrorsCount(new ErrorSpecification.Builder("<crypto.ECElGamalEncryptorTest: void testFour(java.lang.String)>")
-				.withFPs(RequiredPredicateError.class, 1, "https://github.com/CROSSINGTUD/CryptSL/issues/11")
-				.build());
-		
 		setErrorsCount(new ErrorSpecification.Builder("<crypto.ECElGamalEncryptorTest: void testOne()>")
 				.withTPs(RequiredPredicateError.class, 2)
 				.build());
